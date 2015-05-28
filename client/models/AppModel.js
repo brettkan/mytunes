@@ -29,6 +29,10 @@ var AppModel = Backbone.Model.extend({
       this.get('playlists').add(new PlaylistModel({playlist: copyPlaylist}));
     }, this);
 
+    this.get('playlists').on('playPlaylist', function(playlistModel) {
+      this.get('songQueue').newQueue(playlistModel.get('playlist'));
+    }, this);
+
   }
 
 });

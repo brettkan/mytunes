@@ -39,6 +39,21 @@ var SongQueue = Songs.extend({
 
   savePlaylist: function() {
     this.trigger('savePlaylist', this);
+  },
+
+  newQueue: function(songCollection) {
+    this.reset();
+    songCollection.each(function(song) {
+      this.enqueue(song);
+    }, this)
   }
 
 });
+
+
+
+
+
+
+
+

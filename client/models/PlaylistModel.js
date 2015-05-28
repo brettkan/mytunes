@@ -3,8 +3,8 @@ var PlaylistModel = Backbone.Model.extend({
 
   },
 
-  addToQueue: function () {
-    this.trigger('addToQueue', this);
-  }
+  playPlaylist: function () {
+    this.trigger('playPlaylist', this);
+  },
 
 });

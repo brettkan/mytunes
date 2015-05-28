@@ -4,6 +4,15 @@ var SinglePlaylistView = Backbone.View.extend({
 
   },
 
+  events: {
+    'click' : 'handleClick'
+  },
+
+  handleClick : function() {
+    console.log('click registered');
+    this.model.playPlaylist();
+  },
+
   tagName: "table",
 
   render: function() {
