@@ -28,7 +28,7 @@ var SongQueue = Songs.extend({
     var nextSong = this.at(0);
     var songSource = nextSong.get('source');
     nextSong.play();
-    songSource.set('playCount', songSource.get('playCount') + 1);
+    // songSource.set('playCount', songSource.get('playCount') + 1);
   },
 
   enqueue: function(song) {
