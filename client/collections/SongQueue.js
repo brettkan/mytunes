@@ -37,12 +37,8 @@ var SongQueue = Songs.extend({
     this.push(newSong);
   },
 
-  // endCurrentSong: function() {
-  //   this.shift();
-  //   this.at(0).play()
-  //   // var nextSong = this.shift();
-  //   // nextSong.play();
-  //   // this.unshift(nextSong);
-  // }
+  savePlaylist: function() {
+    this.trigger('savePlaylist', this);
+  }
 
 });
