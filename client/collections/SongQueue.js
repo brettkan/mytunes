@@ -13,8 +13,12 @@ var SongQueue = Songs.extend({
     this.remove(song);
   },
 
-  endCurrentSong: function(song) {
-
+  endCurrentSong: function() {
+    this.shift();
+    this.at(0).play()
+    // var nextSong = this.shift();
+    // nextSong.play();
+    // this.unshift(nextSong);
   }
 
 });
