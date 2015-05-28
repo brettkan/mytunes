@@ -8,7 +8,7 @@ var SongQueue = Songs.extend({
       }
     }, this);
 
-    this.on('ended', function () {
+    this.on('ended', function (song) {
       this.shift();
       if (this.length > 0) {
         this.playFirst();
@@ -25,20 +25,24 @@ var SongQueue = Songs.extend({
   },
 
   playFirst: function() {
-    this.at(0).play();
+    var nextSong = this.at(0);
+    var songSource = nextSong.get('source');
+    nextSong.play();
+    songSource.set('playCount', songSource.get('playCount') + 1);
   },
 
   enqueue: function(song) {
     var newSong = new SongModel(song.attributes);
+    newSong.set('source', song);
     this.push(newSong);
   },
 
-  endCurrentSong: function() {
-    this.shift();
-    this.at(0).play()
-    // var nextSong = this.shift();
-    // nextSong.play();
-    // this.unshift(nextSong);
-  }
+  // endCurrentSong: function() {
+  //   this.shift();
+  //   this.at(0).play()
+  //   // var nextSong = this.shift();
+  //   // nextSong.play();
+  //   // this.unshift(nextSong);
+  // }
 
 });
