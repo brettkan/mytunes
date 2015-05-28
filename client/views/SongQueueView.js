@@ -6,7 +6,7 @@ var SongQueueView = Backbone.View.extend({
   initialize: function() {
     this.collection.on('add', function (song) {
       this.render();
-      this.playQueue(song);
+      //this.playQueue(song);
     }, this);
 
     this.collection.on('remove', function (song) {
@@ -15,11 +15,11 @@ var SongQueueView = Backbone.View.extend({
 
   },
 
-  playQueue: function(song) {
-    if (this.collection.length === 1) {
-      song.play();
-    }
-  },
+  // playQueue: function(song) {
+  //   if (this.collection.length === 1) {
+  //     song.play();
+  //   }
+  // },
 
   render: function() {
     this.$el.children().detach();
