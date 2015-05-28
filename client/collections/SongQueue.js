@@ -29,7 +29,8 @@ var SongQueue = Songs.extend({
   },
 
   enqueue: function(song) {
-    this.push(song);
+    var newSong = new SongModel(song.attributes);
+    this.push(newSong);
   },
 
   endCurrentSong: function() {
