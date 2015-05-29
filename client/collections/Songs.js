@@ -3,12 +3,12 @@ var Songs = Backbone.Collection.extend({
 
   model: SongModel,
 
-  playSongFromRouter: function(songName) {
-    // this.each(function(song) {
-      if (songName === 'test') {
-        this.at(0).enqueue();
+  playSongFromRouter: function(songID) {
+    this.each(function(song) {
+      if (songID === song.cid) {
+        song.enqueue();
       }
-    // })
+    })
   }
 
 });

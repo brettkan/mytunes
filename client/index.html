@@ -29,6 +29,8 @@
 
 
     <script>
+      var myTunes = {};
+
       $(function(){
         // set up model objects
         // var library = new Songs(songData);
@@ -45,19 +47,19 @@
 
         // Backbone.history.start();
 
-        var library = new Songs(songData);
-        var app = new AppModel({library: library});
+        myTunes.library = new Songs(songData);
+        myTunes.app = new AppModel({library: myTunes.library});
 
         // build a view for the top level of the whole app
-        var appView = new AppView({model: app});
+        myTunes.appView = new AppView({model: myTunes.app});
 
-        var appRouter = new AppRouter();
+        myTunes.appRouter = new AppRouter();
 
         Backbone.history.start();
 
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('body').append(myTunes.appView.render());
       });
     </script>
   </body>

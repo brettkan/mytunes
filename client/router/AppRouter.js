@@ -2,15 +2,14 @@ var AppRouter = Backbone.Router.extend({
 
   initialize: function() {
 
-    this.on('route:playSong', function(songName) {
-      app.playSongFromRouter(songName);
-    })
+    this.on('route:playSong', function(songID) {
+      myTunes.app.playSongFromRouter(songID);
+    });
 
   },
 
   routes: {
-    "song/:songName" : "playSong",
-    "*actions" : "defaultRoute"
+    "song/:songID" : "playSong",
   }
 
 });

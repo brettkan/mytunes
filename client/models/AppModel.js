@@ -5,6 +5,7 @@ var AppModel = Backbone.Model.extend({
     this.set('currentSong', new SongModel());
     this.set('songQueue', new SongQueue());
     this.set('playlists', new Playlists());
+    // this.set('appRouter', new AppRouter());
 
     /* Note that 'this' is passed as the third argument. That third argument is
     the context. The 'play' handler will always be bound to that context we pass in.
@@ -29,10 +30,16 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').newQueue(playlistModel.get('playlist'));
     }, this);
 
+    // this.get('appRouter').on('route:playSong', function(songName) {
+    //   this.get('library').playSongFromRouter(songName);
+    // }, this);
+
+    // Backbone.history.start();
+
   },
 
-  playSongFromRouter: function(songName) {
-    this.get('library').playSongFromRouter(songName);
+  playSongFromRouter: function(songID) {
+    this.get('library').playSongFromRouter(songID);
   }
 
 });
