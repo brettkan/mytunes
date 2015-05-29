@@ -29,6 +29,10 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').newQueue(playlistModel.get('playlist'));
     }, this);
 
+  },
+
+  playSongFromRouter: function(songName) {
+    this.get('library').playSongFromRouter(songName);
   }
 
 });

@@ -25,14 +25,36 @@
     <script src="views/SinglePlaylistView.js"></script>
     <script src="views/AppView.js"></script>
 
+    <script src="router/AppRouter.js"></script>
+
+
     <script>
       $(function(){
         // set up model objects
+        // var library = new Songs(songData);
+
+        // var appRouter = new AppRouter({
+        //     app : new AppModel({library: library}),
+        //     appView : new AppView({model: app})
+        // });
+
+        // appRouter.on('route:playSong', function(songName) {
+        //   debugger;
+        //   appRouter.get('app').playSongFromRouter(songName);
+        // })
+
+        // Backbone.history.start();
+
         var library = new Songs(songData);
         var app = new AppModel({library: library});
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
+
+        var appRouter = new AppRouter();
+
+        Backbone.history.start();
+
 
         // put the view onto the screen
         $('body').append(appView.render());

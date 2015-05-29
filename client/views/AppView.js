@@ -6,6 +6,13 @@ var AppView = Backbone.View.extend({
     this.libraryView = new LibraryView({collection: this.model.get('library')});
     this.songQueueView = new SongQueueView({collection: this.model.get('songQueue')});
     this.playlistsView = new PlaylistsView({collection: this.model.get('playlists')});
+    // this.appRouter = new AppRouter();
+
+    // Backbone.history.start();
+
+    // this.appRouter.on('route:playSong', function(songName) {
+    //   this.model.playSongFromRouter(songName);
+    // })
 
     // change:currentSong - this is Backbone's way of allowing you to filter events to
     // ONLY receive change events for the specific property, 'currentSong'
